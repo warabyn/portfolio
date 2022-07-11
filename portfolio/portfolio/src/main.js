@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VAnimateCss from 'animate.css';
+import 'animate.css';
 
 createApp(App).mount('#app')
-createApp.use(VAnimateCss); // Animate.css

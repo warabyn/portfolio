@@ -4,10 +4,10 @@
       <div :style="{width: progressBar + '%' }"></div>
     </div>
     <div class="card-img">
-      <a :href="currentUrl" target="_blank" v-if="currentUrl">
-        <img :src="require('@/assets/img/'+currentImage)" class="div-full-img with-link">
+      <a :href="currentUrl" target="_blank" :disabled="currentUrl">
+        <img :src="require('@/assets/img/'+currentImage)" class="div-full-img" :class="currentUrl?'with-link':''">
       </a>
-      <img :src="require('@/assets/img/'+currentImage)" class="div-full-img" v-else>
+      <!--<img :src="require('@/assets/img/'+currentImage)" class="div-full-img" v-else>-->
       <div v-if="viewImages.length > 0" class="actions" :class="{'noPrev': activeImage === 0}">
         <span @click="changeFirstImage('left')" v-if="activeImage !== 0" class="prev ml20">&#8249;</span>
         <span @click="changeFirstImage('right')" v-if="activeImage !== viewImages.length - 1" class="next mr20">&#8250;</span>
@@ -230,20 +230,6 @@ export default {
   position: relative;
 }
 
-.progressbar {
-  display: block;
-  width: 100%;
-  height: 5px;
-  position: absolute;
-  background-color: rgba(221, 221, 221, 0.25);
-  z-index: 1;
-}
-
-.progressbar > div {
-  background-color: rgba(255, 255, 255, 0.52);
-  height: 100%;
-}
-
 .thumbnails {
   display: flex;
   flex-direction: row;
@@ -266,7 +252,7 @@ export default {
 .thumbnail-image > img {
   width: 100%;
   height: auto;
-  transition: all 250ms;
+
   cursor: pointer;
 }
 
@@ -280,21 +266,17 @@ export default {
   position: relative;
   margin-bottom: 15px;
   width:95%;
-  height:calc(100vh - 195px);
+  height:450px;
   margin-right: auto;
   margin-left: auto;
-  /* border: 1px solid #ccc; */
 }
 
 .card-img > img {
-  /* display: block; */
-  /* margin: 0 auto; */
   width: 100%;
   object-fit:contain;
   -o-object-fit: contain;
   object-position:center;
   -o-object-position: center;
-  /* max-height: calc(100vh - 180px); */
   position: absolute;
   margin: 0px;
   top: 50%;
@@ -302,7 +284,6 @@ export default {
   transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
-  /* border: 1px solid #ccc; */
 }
 
 .landscape {
@@ -361,6 +342,7 @@ export default {
     background-size: contain;
     background-position: center;
     border-radius:10px;
+    border: 1px solid black;
 }
 .with-link {
     border: 3px solid skyblue;

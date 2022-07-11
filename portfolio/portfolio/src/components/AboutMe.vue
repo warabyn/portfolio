@@ -5,6 +5,7 @@
       ご訪問ありがとうございます。<br>
       <br>
       岡山県で活動するWebエンジニアわらびのと申します。<br>
+      {{getAge}}歳、男性<br>
       情報系大学を卒業後、情報サービス企業に就職<br>Web系を中心とするSEプログラマーとして、<br>およそ{{ getWorkYM }}年業務に関わってきました。<br>
       <br>
       このサイトはその一部を紹介するとともに、<br>
@@ -21,6 +22,9 @@ export default {
   computed: {
     getWorkYM() {
       return parseInt(util.getNow("YYYY")) - 2006;
+    },
+    getAge() {
+      return parseInt(util.getNow("YYYY")) - 1984;
     }
   }
 }

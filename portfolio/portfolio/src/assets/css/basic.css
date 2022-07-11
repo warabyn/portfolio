@@ -65,7 +65,7 @@ header .gnav .menu li + li {
 body {
   text-align: center;
   font-size: 100%;
-  font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3" sans-serif;
+  font-family: 'Sawarabi Gothic', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #F2F2F2;
@@ -362,7 +362,7 @@ dt {
     display: inline-block;
     margin-bottom: 10px;
     padding: 0 30px 0 0;
-    background-color: #F7F7F7;
+    background-color: #F2F2F2;
     z-index: 1;
 }
 
@@ -382,7 +382,7 @@ dt span {
 
 dt span::before {
     left: 0;
-    border-color: transparent transparent transparent #F7F7F7;
+    border-color: transparent transparent transparent #F2F2F2;
 }
 
 dt span::before,  dt span::after {
@@ -619,7 +619,6 @@ dt span::after {
     font-weight: bold;
     color: #b40000;
     font-size: 40px;
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
 
 

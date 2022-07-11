@@ -38,8 +38,15 @@ export default {
     headerSelect(selected){
       this.page = selected;
     }
+  },
+  mounted() {
+    document.title = "わらびののはる";
+    document.querySelector("meta[name='description']").setAttribute('content', "岡山県で活動するWebエンジニアわらびののポートフォリオ")
   }
 }
 </script>
 
 <style src="@/assets/css/basic.css"></style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+</style>
